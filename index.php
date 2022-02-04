@@ -47,7 +47,7 @@
         <div class="row justify-content-center my-5 p-5">
             <div class="card col-6">
                 <div class="card-body p-4">
-                    <h5 class="card-title text-center">ABC Technical College</h5>
+                    <h5 class="card-title text-center">Technical College</h5>
                     <p class="card-text fs-4 text-center">Sign In</p>
                     <!--login form-->
                         <form method="POST">
