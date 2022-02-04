@@ -3,14 +3,14 @@
 
     //$offset = 0;
 
-    $select_query = "SELECT * FROM student";// LIMIT $offset,10";
+    $select_query = "SELECT * FROM course";// LIMIT $offset,10";
 
     $select_result = mysqli_query($connection,$select_query);
 ?>
 <?php
     if (isset($_POST['Search'])) {
         $search = $_POST['txtSearch'];
-        $search_query = "SELECT * FROM student WHERE name LIKE '%".$search."%' OR index_no LIKE '".$search."%' OR nic LIKE '".$search."%' OR gender LIKE '".$search."%' OR address LIKE '%".$search."%' OR course_code LIKE '".$search."%'";
+        $search_query = "SELECT * FROM course WHERE course_id LIKE '%".$search."%' OR course_code LIKE '".$search."%' OR course_name LIKE '".$search."%' OR trade_name LIKE '".$search."%' OR course_type LIKE '%".$search."%' OR batch LIKE '".$search."%' OR duration LIKE '".$search."%' OR nvq_level LIKE '".$search."%'";
         $select_result = mysqli_query($connection,$search_query);
         if ($select_result) {
             //echo '<div class="mx-5 alert alert-primary fixed-bottom alert-dismissible" data-dismiss="alert">Student Found</div>';
@@ -23,7 +23,7 @@
 
 <?php
     //include 'dbconnection.php';
-    $dropdown_query = "SELECT DISTINCT(course_code) FROM student";
+    $dropdown_query = "SELECT DISTINCT(course_code) FROM course";
 
     $dropdown_result = mysqli_query($connection,$dropdown_query);
 ?>
@@ -38,7 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/bootstrap.min.js"></script>
-    <title>Students</title>
+    <title>Courses</title>
 </head>
 <body>
     <!--navbar-->
@@ -51,10 +51,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-2">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="students.php">Students</a>
+                        <a class="nav-link" aria-current="page" href="students.php">Students</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="courses.php">Courses</a>
+                        <a class="nav-link active" href="courses.php">Courses</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="results.php">Results</a>
@@ -72,14 +72,14 @@
         <!--search card-->
         <div class="card mt-5">
             <div class="card-header">
-                Find a student
+                Find a course
             </div>
             <div class="card-body p-4">
                 <!--serch form-->
                 <div class="col-6 mx-auto">
                     <form method="POST">
                         <div class="input-group">
-                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for students" name="txtSearch"/>
+                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for course" name="txtSearch"/>
                             <input class="btn btn-primary py-0" type="submit" name = "Search" value="Search"></input>
                         </div>
                     </form>
@@ -102,7 +102,7 @@
         <!--end search card-->
         <div class="card my-3">
             <div class="card-header">
-                Student Details
+                Course Details
             </div>
             <div class="card-body">
                 <!--table-->
@@ -111,16 +111,13 @@
                     <thead class="bg-light">
                         <tr>
                             <th scope="col">Id</th>
+                            <th scope="col">Code</th>
                             <th scope="col">Name</th>
-                            <th scope="col">NIC</th>
-                            <th scope="col">Gender</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Telephone</th>
-                            <th scope="col">DOB</th>
-                            <th scope="col">Training No</th>
-                            <th scope="col">Course</th>
+                            <th scope="col">Trade Name</th>
+                            <th scope="col">Type</th>
                             <th scope="col">Batch</th>
-                            <th scope="col">Dropout</th>
+                            <th scope="col">Duration</th>
+                            <th scope="col">NVQ</th>
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -128,22 +125,19 @@
                     <tbody>
                         <?php While($record = mysqli_fetch_assoc($select_result)){ ?>
                             <tr>
-                                <td> <?php echo $record['index_no'] ?></td>
-                                <td> <?php echo $record['name']; ?> </td>
-                                <td> <?php echo $record['nic']; ?> </td>
-                                <td> <?php echo $record['gender']; ?> </td>
-                                <td> <?php echo $record['address']; ?> </td>
-                                <td> <?php echo $record['telephone']; ?> </td>
-                                <td> <?php echo $record['dob']; ?> </td>
-                                <td> <?php echo $record['training_no']; ?> </td>
+                                <td> <?php echo $record['course_id'] ?></td>
                                 <td> <?php echo $record['course_code']; ?> </td>
+                                <td> <?php echo $record['course_name']; ?> </td>
+                                <td> <?php echo $record['trade_name']; ?> </td>
+                                <td> <?php echo $record['course_type']; ?> </td>
                                 <td> <?php echo $record['batch']; ?> </td>
-                                <td> <?php echo $record['dropout']; ?> </td>
+                                <td> <?php echo $record['duration']; ?> </td>
+                                <td> <?php echo $record['nvq_level']; ?> </td>
                                 <td style="text-align:right"> 
-                                    <a href="delete.php?id=<?php echo $record['index_no']?>" class="btn btn-danger">Delete</a>
+                                    <a href="delete.php?id=<?php echo $record['course_code']?>" class="btn btn-danger">Delete</a>
                                 </td>
                                 <td style="text-align:right">
-                                    <a href="update.php?id=<?php echo $record['index_no']?>" class="btn btn-warning">Update</a>
+                                    <a href="update.php?id=<?php echo $record['course_code']?>" class="btn btn-warning">Update</a>
                                 </td>
                             </tr>  
                         <?php } ?>
