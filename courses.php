@@ -37,8 +37,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
-    <title>Courses</title>
+    <title>Course Details - SRM System</title>
 </head>
 <body>
     <!--navbar-->
@@ -75,14 +77,14 @@
         <!--search card-->
         <div class="card mt-5">
             <div class="card-header">
-                Find a course
+                Search Courses
             </div>
             <div class="card-body p-4">
                 <!--serch form-->
                 <div class="col-6 mx-auto">
                     <form method="POST">
                         <div class="input-group">
-                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for course" name="txtSearch"/>
+                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search by course" name="txtSearch"/>
                             <input class="btn btn-primary py-0" type="submit" name = "Search" value="Search"></input>
                         </div>
                     </form>
@@ -151,5 +153,7 @@
             </div>
         </div>
     </div>
+
+    <?php include('footer.php') ?>
 </body>
 </html>

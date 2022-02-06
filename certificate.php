@@ -44,8 +44,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
-    <title>Results</title>
+    <title>Print Certificate - SRM System</title>
 </head>
 <body>
     <!--navbar-->
@@ -84,12 +86,12 @@
             </div>-->
             <div class="card-body p-4 mx-auto">
                 <center>
-                <img class="img-thumbnail" src="images/Logo.png" alt="Logo" >
-                <p class="fs-5">කාර්මික අධ්‍යාපන හා පුහුණු කිරීමේ දෙපාර්තමේන්තුව <br/> 
+                <img class="img-thumbnail" src="images/Title.png" alt="Logo" style="width:80%">
+                <!--<p class="fs-5">කාර්මික අධ්‍යාපන හා පුහුණු කිරීමේ දෙපාර්තමේන්තුව <br/> 
                     தொழில்நுட்பக் கல்வி மற்றும் பயிற்சித் துறை<br/>
                     Department of Technical Education and Training 
                 </p>
-                </center>
+                </center>-->
             </div>
         </div>
         <!--end header card-->
@@ -179,5 +181,7 @@
         <!--end result card-->
         <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print Certificate</button>
     </div>
+
+    <?php include('footer.php') ?>
 </body>
 </html>

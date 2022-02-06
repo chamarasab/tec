@@ -39,16 +39,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
-    <title>Login</title>
+    <title>Log In - SRM System</title>
 </head>
 <body>
     <div class="container">
+        <?php include('header.php') ?>
         <div class="row justify-content-center my-5 p-5">
-            <div class="card col-6">
-                <div class="card-body p-4">
-                    <h5 class="card-title text-center">Technical College</h5>
-                    <p class="card-text fs-4 text-center">Sign In</p>
+            <div class="card col-5">
+                <div class="card-body p-4"> 
+                    <h3 class="card-title text-center boldtext">SRM Account Login</h3>
+                    <p class="card-text weltext text-center">Welcome back! Log In with your Email</p>
                     <!--login form-->
                         <form method="POST">
                             <div class="mb-3">
@@ -70,5 +73,6 @@
             </div>
         </div>
     </div>
+    <?php include('footer.php') ?>
 </body>
 </html>

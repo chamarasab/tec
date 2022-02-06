@@ -37,17 +37,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="js/bootstrap.min.js"></script>
-    <title>Students</title>
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+    <script src="js/bootstrap.min.js"></script>    
+    <title>Student Details - SRM System</title>
 </head>
 <body>
     <!--navbar-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light navibar">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Technical College</a>
+            <!--<img src="images/Logo_Head.png" Alt="DTET logo">-->
+            <div class="navbar-brand title" href="#">Student Results Management System</div>
+            
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
+            
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-2">
                     <li class="nav-item">
@@ -75,14 +80,14 @@
         <!--search card-->
         <div class="card mt-5">
             <div class="card-header">
-                Find a student
+                Search Student
             </div>
             <div class="card-body p-4">
                 <!--serch form-->
                 <div class="col-6 mx-auto">
                     <form method="POST">
                         <div class="input-group">
-                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for students" name="txtSearch"/>
+                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search by students" name="txtSearch"/>
                             <input class="btn btn-primary py-0" type="submit" name = "Search" value="Search"></input>
                         </div>
                     </form>
@@ -157,5 +162,7 @@
             </div>
         </div>
     </div>
+
+    <?php include('footer.php') ?>
 </body>
 </html>
