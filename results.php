@@ -58,8 +58,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
-    <title>Results</title>
+    <title>Exam Results - SRM System</title>
 </head>
 <body>
     <!--navbar-->
@@ -168,5 +170,7 @@
             <a class="btn btn-warning my-3" href="certificate.php?index=<?php echo $student_index?>">Certificate</a>
         </div>
     </div>
+
+    <?php include('footer.php') ?>
 </body>
 </html>

@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
-    <title>About</title>
+    <title>About SRM System</title>
 </head>
 <body>
     <!--navbar-->
@@ -42,9 +44,19 @@
     <div class="container pt-4">
         <!--header card-->
         <div class="card mt-5">
-            <div class="card-body p-4 mx-auto">
-                <div class="">
-                    <p class="fs-3 mx-auto">About Us</p>
+        <div class="card-header">
+                Project Details
+            </div>
+            <div class="card-body p-2 mx-auto" style="width: 75%";>
+                <div class="row">
+                    <table class="table table-hover">
+                    <tbody>
+                        <tr><th scope="row">Project Name</th>       <td>Student Result Management (SRM) System</td></tr>
+                        <tr><th scope="row">Version</th>            <td>1.0.0</td></tr>
+                        <tr><th scope="row">License</th>            <td>Free</td></tr>
+                        <tr><th scope="row">Description</th>        <td>Issuing examination results online to the DTET students</td></tr>
+                    </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -92,5 +104,7 @@
         </div>
         <!--end developers card-->
     </div>
+
+    <?php include('footer.php') ?>
 </body>
 </html>
