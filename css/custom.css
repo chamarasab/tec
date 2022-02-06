@@ -13,10 +13,9 @@
     font-size: 10px;
     font-weight: 600;
     text-align: center;
-    color: #fff;
+    color: #636363;
 }
 .footer{
-    background-color: #0b5ed7;
     padding: 8px;
     position: fixed;
     bottom: 0;
