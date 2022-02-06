@@ -176,7 +176,7 @@
             </div>
         </div>
         <!--end result card-->
-        <button class="btn btn-warning mb-3" onclick="window.print()">Print Certificate</button>
+        <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print Certificate</button>
     </div>
 </body>
 </html>

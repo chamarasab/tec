@@ -91,7 +91,7 @@
                             <select class="form-select bg-light border-0 small" name="txtSearch">
                                 <option selected>Search by course</option> 
                                 <?php while ($items = mysqli_fetch_assoc($dropdown_result)) {?>
-                                    <option value="1"><?php echo $items['course_code'] ?></option>
+                                    <option value="<?php echo $items['course_code'] ?>"><?php echo $items['course_code'] ?></option>
                                 <?php } ?>
                             </select>
                             <!--<input class="bg-light form-control border-0 small" type="text" placeholder="Search for students" name="txtSearch2"/>-->
