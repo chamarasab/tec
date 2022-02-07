@@ -3,7 +3,7 @@
 
     //$offset = 0;
 
-    $select_query = "SELECT * FROM student";// LIMIT $offset,10";
+    $select_query = "SELECT * FROM student ORDER BY index_no DESC";// LIMIT $offset,10";
 
     $select_result = mysqli_query($connection,$select_query);
 ?>
@@ -29,7 +29,6 @@
 ?>
 
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -38,6 +37,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/floating-action-button.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>    
     <title>Student Details - SRM System</title>
@@ -67,9 +68,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>-->
                 </ul>
             </div>
         </div>
@@ -161,6 +159,12 @@
                 <!--table end-->
             </div>
         </div>
+
+        <!--floating button-->
+        <a href="addstudent.php" class="float">
+            <i class="fa fa-plus my-float"></i>
+        </a>
+        <!--end floating button-->
     </div>
 
     <?php include('footer.php') ?>
