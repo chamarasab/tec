@@ -38,6 +38,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/floating-action-button.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
     <title>Course Details - SRM System</title>
@@ -152,6 +154,11 @@
                 <!--table end-->
             </div>
         </div>
+        <!--floating button-->
+        <a href="addcourse.php" class="float">
+            <i class="fa fa-plus my-float"></i>
+        </a>
+        <!--end floating button-->
     </div>
 
     <?php include('footer.php') ?>
