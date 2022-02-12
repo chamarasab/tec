@@ -60,6 +60,9 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="css/floating-action-button.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/ico">
     <script src="js/bootstrap.min.js"></script>
     <title>Exam Results - SRM System</title>
 </head>
@@ -169,6 +172,12 @@
         <div class="d-grid gap-2">
             <a class="btn btn-warning my-3" href="certificate.php?index=<?php echo $student_index?>">Certificate</a>
         </div>
+
+        <!--floating button-->
+        <a href="addresult.php" class="float">
+            <i class="fa fa-plus my-float"></i>
+        </a>
+        <!--end floating button-->
     </div>
 
     <?php include('footer.php') ?>
