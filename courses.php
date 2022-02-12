@@ -48,7 +48,7 @@
     <!--navbar-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Technical College</a>
+            <a class="navbar-brand title" href="#">Student Results Management System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -155,7 +155,7 @@
             </div>
         </div>
         <!--floating button-->
-        <a href="addcourse.php" class="float">
+        <a href="addcourse.php" class="float btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add Student">
             <i class="fa fa-plus my-float"></i>
         </a>
         <!--end floating button-->
