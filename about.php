@@ -75,7 +75,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Chamara Ekanayake</h5>
                             <p class="card-text">User Interface designed, Contributed to design front-end HTML/CSS and back-end PHP.</p>
-                            <a href="https://vle.sab.ac.lk/user/profile.php" class="btn btn-warning">MIT Reg : 2112091004</a>
+                            <a href="https://github.com/chamarasab/tec" class="btn btn-warning">MIT Reg : 2112091004</a>
                         </div>
                     </div>
                     <!--end dev1 card-->
@@ -85,7 +85,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Shamika Isurinda</h5>
                             <p class="card-text">Managing whole the project work, Contributed to managing all levels of project manager, resource finder and architect.</p>
-                            <a href="#" class="btn btn-success">MIT Reg : 2112091015</a>
+                            <a href="https://github.com/chamarasab/tec" class="btn btn-success">MIT Reg : 2112091015</a>
                         </div>
                     </div>
                     <!--end dev1 card-->
@@ -95,7 +95,7 @@
                         <div class="card-body">
                             <h5 class="card-title">Sachith Dissanayake</h5>
                             <p class="card-text">Database designer, Contributed to sketch the flow of the system, database design and structure of the system.</p>
-                            <a href="#" class="btn btn-danger">MIT Reg : 2112091013</a>
+                            <a href="https://github.com/chamarasab/tec" class="btn btn-danger">MIT Reg : 2112091013</a>
                         </div>
                     </div>
                     <!--end dev1 card-->
