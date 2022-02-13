@@ -70,7 +70,7 @@
     <!--navbar-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Technical College</a>
+            <a class="navbar-brand title" href="#">Student Results Management System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -124,11 +124,8 @@
                 Student details
             </div>
             <div class="card-body">
-                <!--internal card-->
-                <div class="card my-0  mx-auto"> 
-                    <div class="card-body p-4">
-                        <!--student details table-->
-                        <div class="table-responsive">
+                <div class="ccard my-0  mx-auto">
+                    <div class="table-responsive">
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
@@ -161,20 +158,18 @@
                                 </tr>
                             </tbody>
                         </table>
-                        </div>
-                        <!--end student details table-->
                     </div>
                 </div>
-                <!--end internal card-->
             </div>
+
         </div>
         <!--end student card-->
-        <div class="d-grid gap-2">
-            <a class="btn btn-warning my-3" href="certificate.php?index=<?php echo $student_index?>">Certificate</a>
+        <div class="fd-grid gap-2">
+            <a class="btn btn-warning my-3" href="certificate.php?index=<?php echo $student_index?>">View Exam Results</a>
         </div>
 
         <!--floating button-->
-        <a href="addresult.php" class="float">
+        <a href="addresult.php" class="float btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add Course">
             <i class="fa fa-plus my-float"></i>
         </a>
         <!--end floating button-->
