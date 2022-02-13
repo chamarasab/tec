@@ -65,7 +65,7 @@
         <!--developers card-->
         <div class="card my-3">
             <div class="card-header">
-                Developer details
+                Project Development Team
             </div>
             <div class="card-body p-4 mx-auto">
                 <div class="row">
@@ -74,7 +74,7 @@
                         <img src="images/dev1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Chamara Ekanayake</h5>
-                            <p class="card-text">Student<br>MIT Programme - SUSL<br>MIT Reg : 2112091004</p>
+                            <p class="card-text">Student<br>MIT/FGS/SUSL<br>Reg No: 2112091004</p>
                             <a href="https://vle.sab.ac.lk/user/profile.php" class="btn btn-warning">View Profile</a>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         <img src="images/dev2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Shamika Isurinda</h5>
-                            <p class="card-text">Student<br>MIT Programme - SUSL<br>MIT Reg : 2112091015</p>
+                            <p class="card-text">Student<br>MIT/FGS/SUSL<br>Reg No: 2112091015</p>
                             <a href="#" class="btn btn-success">View Profile</a>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         <img src="images/dev3.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Sachith Dissanayake</h5>
-                            <p class="card-text">Student<br>MIT Programme - SUSL<br>MIT Reg : 2112091013</p>
+                            <p class="card-text">Student<br>MIT/FGS/SUSL<br>Reg No: 2112091013</p>
                             <a href="#" class="btn btn-danger">View Profile</a>
                         </div>
                     </div>

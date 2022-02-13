@@ -88,9 +88,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>-->
                 </ul>
             </div>
         </div>
@@ -103,12 +100,14 @@
             <!--<div class="card-header">
                 Find a student
             </div>-->
+            <img class="" src="images/head.jpg" alt="Header image"> 
             <div class="card-body p-4">
                 <!--serch form-->
+                <h5>FIND YOUR EXAM RESULTS HERE</h5> 
                 <div class="col-6 mx-auto">
                     <form method="POST">
                         <div class="input-group">
-                            <input class="bg-light form-control border-1 small" type="text" placeholder="Search for student" name="txtSearch"/>
+                            <input class="bg-light form-control border-1 small" type="text" placeholder="Index number" name="txtSearch"/>
                             <input class="btn btn-primary py-0" type="submit" name = "Search" value="Search"></input>
                         </div>
                     </form>
