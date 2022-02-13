@@ -52,8 +52,8 @@
 <body>
     <!--navbar-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">Technical College</a>
+        <div class="container-fluid d-print-none">
+            <a class="navbar-brand title" href="#">Student Results Management System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -68,7 +68,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="results.php">Results</a>
                     </li>
-
                     <li class="nav-item">
                         <a class="nav-link" href="about.php">About</a>
                     </li>
@@ -79,109 +78,72 @@
     <!--end navbar-->
 
     <div class="container pt-4">
-        <!--header card-->
-        <div class="card mt-5">
-            <!--<div class="card-header">
-                Find a student
-            </div>-->
-            <div class="card-body p-4 mx-auto">
-                <center>
-                <img class="img-thumbnail" src="images/Title.png" alt="Logo" style="width:80%">
-                <!--<p class="fs-5">කාර්මික අධ්‍යාපන හා පුහුණු කිරීමේ දෙපාර්තමේන්තුව <br/> 
-                    தொழில்நுட்பக் கல்வி மற்றும் பயிற்சித் துறை<br/>
-                    Department of Technical Education and Training 
-                </p>
-                </center>-->
-            </div>
-        </div>
-        <!--end header card-->
-
-        <!--student card-->
+        <p>&nbsp;</p>
         <div class="card mt-3">
-            <div class="card-header">
-                Student details
-            </div>
-            <div class="card-body">
-                <!--internal card-->
-                <div class="card my-0  mx-auto"> 
-                    <div class="card-body p-4">
-                        <!--student details table-->
-                        <div class="table-responsive">
-                        <table class="table table-hover">
-                            <tbody>
-                                <tr>
-                                    <td>Index : </td>
-                                    <td> <?php echo $student_index ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Name : </td>
-                                    <td> <?php echo $student_name; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>NIC : </td>
-                                    <td> <?php echo $student_nic; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Course : </td>
-                                    <td> <?php echo $course_name; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Course Type: </td>
-                                    <td> <?php echo $course_type; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>Course Duration: </td>
-                                    <td> <?php echo $course_duration; ?></td>
-                                </tr>
-                                <tr>
-                                    <td>NVQ Level: </td>
-                                    <td> <?php echo $course_nvq; ?></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        </div>
-                        <!--end student details table-->
+                <div class="card-body p-4">
+                    <div class="d-flex justify-content-center d-none d-print-block printbox">
+                        <img class="printlogo" src="images/Title.png" alt="Logo">
                     </div>
-                </div>
-                <!--end internal card-->
-            </div>
-        </div>
-        <!--end student card-->
-
-        <!--result card-->
-        <div class="card my-3">
-            <div class="card-header">
-                Result details
-            </div>
-            <div class="card-body p-4">
-                <!--table-->
-                <div class="table-responsive">
-                <table class="table table-hover">
-                    <thead class="bg-light">
-                        <tr>
-                            <th scope="col">Subject Code</th>
-                            <th scope="col">Subject Name</th>
-                            <th scope="col">Result</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php While($record = mysqli_fetch_assoc($select_result)){ ?>
-                                <tr>
-                                    <td> <?php echo $record['subject_id'] ?></td>
-                                    <td> <?php echo $record['subject_name']; ?> </td>
-                                    <td> <?php echo $record['results']; ?> </td>
-                                </tr>  
-                            <?php } ?>
-                    </tbody>
-                </table>
-                </div>
-                <!--table end-->
-            </div>
-        </div>
-        <!--end result card-->
-        <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print Certificate</button>
+                    <div class="space10"></div>
+                    <h3 class="printtitle">Final Examination Results - 2021</h3>
+                    <div class="space10"></div>
+                    <!--student details-->
+                    <table class="table table-responsive 0table-sm">
+                        <tbody class="printtable">
+                            <tr>
+                                <td>Index : </td>
+                                <td> <?php echo $student_index ?></td>
+                            </tr>
+                            <tr>
+                                <td>Name : </td>
+                                <td> <?php echo $student_name; ?></td>
+                            </tr>
+                            <tr>
+                                <td>NIC : </td>
+                                <td> <?php echo $student_nic; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Course : </td>
+                                <td> <?php echo $course_name; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Course Type: </td>
+                                <td> <?php echo $course_type; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Course Duration: </td>
+                                <td> <?php echo $course_duration; ?></td>
+                            </tr>
+                            <tr>
+                                <td>NVQ Level: </td>
+                                <td> <?php echo $course_nvq; ?></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--Results table-->
+                    <table class="table table-responsive 0table-sm printtable">
+                        <thead class="bg-light">
+                            <tr>
+                                <th scope="col">Subject Code</th>
+                                <th scope="col">Subject Name</th>
+                                <th scope="col">Result</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php While($record = mysqli_fetch_assoc($select_result)){ ?>
+                                    <tr>
+                                        <td> <?php echo $record['subject_id'] ?></td>
+                                        <td> <?php echo $record['subject_name']; ?> </td>
+                                        <td> <?php echo $record['results']; ?> </td>
+                                    </tr>  
+                                <?php } ?>
+                        </tbody>
+                    </table>
+                    <!--Print button-->
+                    <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print Certificate</button>
+                </div>            
+        </div>        
     </div>
-
     <?php include('footer.php') ?>
 </body>
 </html>
