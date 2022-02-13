@@ -60,11 +60,11 @@
     ob_start();
     if (isset($_POST['btnResults'])) {
         $post_data = array();
-        //$student_index
-        while ($post_data) {
-            # code...
+        
+        while ($_POST['btnResults']) {
+            echo $_POST['txtMark'];
         }
-        $post_data['subject_id'] = $_POST['txtSubjectId'];
+        /*$post_data['subject_id'] = $_POST['txtSubjectId'];
         $post_data['mark'] = $_POST['txtMark'];
 
         
@@ -77,7 +77,7 @@
             header("location: /tec/results.php");
         } else {
             echo "<div class='alert alert-danger'>Oops... Something went wrong!</div>";
-        }
+        }*/
 
         $_POST = array();
 
@@ -223,6 +223,7 @@
                                     <th>Name</th>
                                     <th>Result</th>
                                 </tr>
+                                <form method="POST">
                                 <?php
                                     $i = 0;
                                     if ($subject_result) {
@@ -231,7 +232,7 @@
                                                 $i++;
                                 ?>
                                 <tr>
-                                    <td> <fieldset disabled><input type="text" class="form-control border-0 bg-light" id="txtSubjectId" name="txtSubjectId<?php echo $i ?>" value="<?php echo $items['subject_id']; ?>"> </fieldset></td>
+                                    <td> <fieldset disabled><input type="text" class="form-control border-0 bg-light" id="txtSubjectId" name="txtSubjectId" value="<?php echo $items['subject_id']; ?>"> </fieldset></td>
                                     <td> <?php echo $items['subject_name']; ?> </td>
                                     <td> 
                                         <select class="form-select border-1 small" name="txtMark">
