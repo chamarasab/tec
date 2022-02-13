@@ -112,7 +112,7 @@
     <!--navbar-->
     <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Student Results Management System</a>
+            <a class="navbar-brand title" href="#">Student Results Management System</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
             </button>
@@ -224,8 +224,8 @@
                         <table class="table table-hover">
                             <tbody>
                                 <tr>
-                                    <th>Code</th>
-                                    <th>Name</th>
+                                    <th>Subject Code</th>
+                                    <th>Subject Name</th>
                                     <th>Result</th>
                                 </tr>
                                 <form method="POST">
@@ -242,9 +242,11 @@
                                     <td> 
                                         <select class="form-select border-1 small" name="txtMark<?php echo $i; ?>">
                                             <option selected>Choose...</option> 
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
+                                            <option value="D">D</option>
+                                            <option value="M">M</option>
                                             <option value="C">C</option>
+                                            <option value="P">P</option>
+                                            <option value="F">F</option>
                                             <option value="AB">AB</option>
                                         </select>
                                     </td>
@@ -262,21 +264,16 @@
                             </tbody>
                         </table>
                         <div class="d-grid gap-2 col-12 mx-auto">
-                            <input type="submit" class="btn btn-primary" id="btnResults" name="btnResults" value="Submit"/>
+                            <input type="submit" class="btn btn-primary my-3" id="btnResults" name="btnResults" value="Submit"/>
                         </div>
                         </form>
                         </div>
                         <!--end student details table-->
                     </div>
                 </div>
-                <!--end internal card-->
             </div>
         </div>
-        <!--end student card-->
- 
-
     </div>
-
     <?php include('footer.php') ?>
 </body>
 </html>
