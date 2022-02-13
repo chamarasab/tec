@@ -10,6 +10,7 @@
     $course_type = "";
     $course_duration = "";
     $course_nvq = "";
+    $subject_count = 0;
 
     if (isset($_POST['Search'])) {
         $search = $_POST['txtSearch'];
@@ -19,6 +20,7 @@
             if (mysqli_num_rows($search_result) > 0) {
                 echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Student Found</div>";
                 while ($items = mysqli_fetch_assoc($search_result)) {
+                    $subject_count += 1;
                     $student_index = $items['index_no'];
                     $student_name = $items['name'];
                     $student_nic = $items['nic'];
@@ -59,27 +61,30 @@
     //data insert
     ob_start();
     if (isset($_POST['btnResults'])) {
-        $post_data = array();
+        for ($j=0; $j < $subject_count; $j++) { 
+            $data = array(
+                'index_no' => $student_index,
+                'subject_id' => $_POST['txtSubjectId'.$j],
+                'results' => $_POST['txtMark'.$j]
+            );
+            insert_marks($data);
+            function insert_marks($data)
+            {
+                foreach ($data as $key => $value) {
+                    $k[] = $key;
+                    $v[] = "'".$value."'";
+                }
+                $k = implode(",",$k);
+                $v = implode(",",$v);
         
-        while ($_POST['btnResults']) {
-            echo $_POST['txtMark'];
+                $sql = "INSERT INTO result ($k) VALUES ($v)";
+                $run_query = mysqli_query($connection,$sql);
+            }
+            
         }
-        /*$post_data['subject_id'] = $_POST['txtSubjectId'];
-        $post_data['mark'] = $_POST['txtMark'];
 
-        
-        //INSERT INTO `course`(`course_id`, `course_code`, `course_name`, `trade_name`, `course_type`, `batch`, `duration`, `nvq_level`) VALUES ([value-1],[value-2],[value-3],[value-4],[value-5],[value-6],[value-7],[value-8])
-        $sql = "INSERT INTO result (index_no,subject_id,results) VALUES ('".$student_index."','".$post_data['subject_id']."','".$post_data['mark']."')";
-        $result = mysqli_query($connection,$sql);
 
-        if ($result) {
-            echo "<div class='alert alert-success'>New result added successfully</div>";
-            header("location: /tec/results.php");
-        } else {
-            echo "<div class='alert alert-danger'>Oops... Something went wrong!</div>";
-        }*/
-
-        $_POST = array();
+        //$_POST = array();
 
     }
 
@@ -232,10 +237,10 @@
                                                 $i++;
                                 ?>
                                 <tr>
-                                    <td> <fieldset disabled><input type="text" class="form-control border-0 bg-light" id="txtSubjectId" name="txtSubjectId" value="<?php echo $items['subject_id']; ?>"> </fieldset></td>
+                                    <td> <fieldset disabled><input type="text" class="form-control border-0 bg-light" id="txtSubjectId" name="txtSubjectId<?php echo $i; ?>" value="<?php echo $items['subject_id']; ?>"> </fieldset></td>
                                     <td> <?php echo $items['subject_name']; ?> </td>
                                     <td> 
-                                        <select class="form-select border-1 small" name="txtMark">
+                                        <select class="form-select border-1 small" name="txtMark<?php echo $i; ?>">
                                             <option selected>Choose...</option> 
                                             <option value="A">A</option>
                                             <option value="B">B</option>
