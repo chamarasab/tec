@@ -52,3 +52,9 @@
 .space10{
     padding-top: 10px;
 }
+.reun a {
+    text-decoration: none !important;
+}
+.alignrigt{
+    text-align: right !important;
+}
