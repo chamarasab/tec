@@ -49,33 +49,29 @@
     <script src="js/bootstrap.min.js"></script>
     <title>Print Certificate - SRM System</title>
 </head>
-<body>
-    <!--navbar-->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid d-print-none">
-            <a class="navbar-brand title" href="#">Student Results Management System</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+<body>    
+    <img class="img-fluid wdfull d-print-none" src="images/01.jpg" alt="Header image">
+    <div class="container d-print-none">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">&nbsp;</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-2">
-                    <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="students.php">Students</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="courses.php">Courses</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="results.php">Results</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.php">About</a>
-                    </li>
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">DTET </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">NVQ Results</a>
+                </li>                
+                <li class="nav-item">
+                    <a class="nav-link" href="login.php">Login</a>
+                </li>
                 </ul>
             </div>
-        </div>
-    </nav>
-    <!--end navbar-->
+        </nav>
+    </div>
 
     <div class="container pt-4">
         <p>&nbsp;</p>
@@ -140,7 +136,10 @@
                         </tbody>
                     </table>
                     <!--Print button-->
-                    <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print Certificate</button>
+                    <div class="alignrigt">
+                    <button class="btn btn-success mb-3 d-print-none" href="certificate.php">Back</button>
+                    <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print</button>
+                    <div>
                 </div>            
         </div>        
     </div>

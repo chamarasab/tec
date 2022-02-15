@@ -32,9 +32,6 @@
                     <li class="nav-item">
                         <a class="nav-link active" href="about.php">About</a>
                     </li>
-                    <!--<li class="nav-item">
-                        <a class="nav-link disabled">Disabled</a>
-                    </li>-->
                 </ul>
             </div>
         </div>
@@ -65,27 +62,27 @@
         <!--developers card-->
         <div class="card my-3">
             <div class="card-header">
-                Developer details
+                Project Development Team
             </div>
             <div class="card-body p-4 mx-auto">
-                <div class="row">
+            <div class="row">
                     <!--dev1 card-->
                     <div class="card mx-3 p-3" style="width: 18rem;">
                         <img src="images/dev1.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Chamara Ekanayake</h5>
-                            <p class="card-text">User Interface designed, Contributed to design front-end HTML/CSS and back-end PHP.</p>
-                            <a href="https://github.com/chamarasab/tec" class="btn btn-warning">MIT Reg : 2112091004</a>
+                            <p class="card-text">Student<br>MIT/FGS/SUSL<br>Reg No: 2112091004</p>
+                            <a href="https://vle.sab.ac.lk/user/profile.php" class="btn btn-warning">View Profile</a>
                         </div>
                     </div>
                     <!--end dev1 card-->
                     <!--dev1 card-->
                     <div class="card mx-3 p-3" style="width: 18rem;">
-                        <img src="images/dev4.jpeg" class="card-img-top" alt="...">
+                        <img src="images/dev2.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Shamika Isurinda</h5>
-                            <p class="card-text">Managing whole the project work, Contributed to managing all levels of project manager, resource finder and architect.</p>
-                            <a href="https://github.com/chamarasab/tec" class="btn btn-success">MIT Reg : 2112091015</a>
+                            <p class="card-text">Student<br>MIT/FGS/SUSL<br>Reg No: 2112091015</p>
+                            <a href="#" class="btn btn-success">View Profile</a>
                         </div>
                     </div>
                     <!--end dev1 card-->
@@ -94,8 +91,8 @@
                         <img src="images/dev3.jpeg" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">Sachith Dissanayake</h5>
-                            <p class="card-text">Database designer, Contributed to sketch the flow of the system, database design and structure of the system.</p>
-                            <a href="https://github.com/chamarasab/tec" class="btn btn-danger">MIT Reg : 2112091013</a>
+                            <p class="card-text">Student<br>MIT/FGS/SUSL<br>Reg No: 2112091013</p>
+                            <a href="#" class="btn btn-danger">View Profile</a>
                         </div>
                     </div>
                     <!--end dev1 card-->
