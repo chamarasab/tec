@@ -1,5 +1,5 @@
 <?php
-    include 'dbconnection.php';
+    $connection = mysqli_connect('localhost','root','','tec');
 ?>
 <?php
     $student_index = 0;
@@ -22,6 +22,7 @@
                 while ($items = mysqli_fetch_assoc($search_result)) {
                     $subject_count += 1;
                     $student_index = $items['index_no'];
+                    setDefaultIndex($student_index);
                     $student_name = $items['name'];
                     $student_nic = $items['nic'];
                     $course_name = $items['course_name'];
@@ -38,57 +39,45 @@
         }
         $_POST=array();
     }
+
+    function setDefaultIndex(int $student_index)
+    {
+        $connection = mysqli_connect('localhost','root','','tec'); //😑
+        $setdefault_query = "ALTER TABLE result ALTER index_no SET DEFAULT '$student_index';";
+        $setdefault_result = mysqli_query($connection,$setdefault_query);
+    }
 ?>
+
+<?php
+
+    if (isset($_POST['save_multiple_data'])) {
+        $subject = $_POST['subject'];
+        $mark = $_POST['mark'];
+
+        foreach ($subject as $key => $value) {
+            //echo $value . " - " . $mark[$key];
+            
+            $insert_query = "INSERT INTO result(subject_id, results) VALUES('$value','$mark[$key]')";
+            $result = mysqli_query($connection,$insert_query);
+        }
+
+        if ($result) {
+            $_SESSION['status'] = "Multiple data inserted successfully";
+            header("Location: results.php");
+            exit(0);
+        } else {
+            $_SESSION['status'] = "Multiple data insert failed !";
+            header("Location: results.php");
+            exit(0);
+        }
+        
+    }
+?>
+
 <?php 
     //retrieving subjects detais for result entering table
     $subject_query = "SELECT subject.subject_id,subject.subject_name FROM `subject` WHERE subject.course_code = '".$course_code."'";
     $subject_result = mysqli_query($connection,$subject_query);
-    /*if ($subject_result) {
-        if (mysqli_num_rows($subject_result) > 0) {
-            echo "<div class='alert alert-success alert-dismissible fade show' role='alert'>Student Found</div>";
-            while ($items = mysqli_fetch_assoc($subject_result)) {
-                echo $items['subject_id'] . "  " . $items['subject_name'] ."  ---  ";
-            }
-        } else {
-            echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>No Student Found</div>";
-        }
-    } else {
-        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>".mysql_error()."</div>";
-    }*/
-?>
-
-<?php
-    //data insert
-    ob_start();
-    if (isset($_POST['btnResults'])) {
-        for ($j=0; $j < $subject_count; $j++) { 
-            $data = array(
-                'index_no' => $student_index,
-                'subject_id' => $_POST['txtSubjectId'.$j],
-                'results' => $_POST['txtMark'.$j]
-            );
-            insert_marks($data);
-            function insert_marks($data)
-            {
-                foreach ($data as $key => $value) {
-                    $k[] = $key;
-                    $v[] = "'".$value."'";
-                }
-                $k = implode(",",$k);
-                $v = implode(",",$v);
-        
-                $sql = "INSERT INTO result ($k) VALUES ($v)";
-                $run_query = mysqli_query($connection,$sql);
-            }
-            
-        }
-
-
-        //$_POST = array();
-
-    }
-
-    ob_end_flush();
 ?>
 
 
@@ -220,52 +209,49 @@
                     </div>
                     <div class="card-body p-4">
                         <!--result details table-->
-                        <div class="table-responsive">
-                        <table class="table table-hover">
-                            <tbody>
-                                <tr>
-                                    <th>Code</th>
-                                    <th>Name</th>
-                                    <th>Result</th>
-                                </tr>
-                                <form method="POST">
-                                <?php
-                                    $i = 0;
-                                    if ($subject_result) {
-                                        if (mysqli_num_rows($subject_result) > 0) {
-                                            while ($items = mysqli_fetch_assoc($subject_result)) {
-                                                $i++;
-                                ?>
-                                <tr>
-                                    <td> <fieldset disabled><input type="text" class="form-control border-0 bg-light" id="txtSubjectId" name="txtSubjectId<?php echo $i; ?>" value="<?php echo $items['subject_id']; ?>"> </fieldset></td>
-                                    <td> <?php echo $items['subject_name']; ?> </td>
-                                    <td> 
-                                        <select class="form-select border-1 small" name="txtMark<?php echo $i; ?>">
-                                            <option selected>Choose...</option> 
-                                            <option value="A">A</option>
-                                            <option value="B">B</option>
-                                            <option value="C">C</option>
-                                            <option value="AB">AB</option>
-                                        </select>
-                                    </td>
-                                </tr>
-                                <?php
-                                    }
-                                    } else {
-                                        echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>No Subjects Found</div>";
-                                    }
-                                } else {
-                                    echo "<div class='alert alert-danger alert-dismissible fade show' role='alert'>".mysql_error()."</div>";
-                                } 
-                                ?>
-                                
-                            </tbody>
-                        </table>
-                        <div class="d-grid gap-2 col-12 mx-auto">
-                            <input type="submit" class="btn btn-primary" id="btnResults" name="btnResults" value="Submit"/>
-                        </div>
+                        <form action="" method="post">
+                            <?php
+                                $i = 0;
+                                if ($subject_result) {
+                                    if (mysqli_num_rows($subject_result) > 0) {
+                                        while ($items = mysqli_fetch_assoc($subject_result)) {
+                                            $i++;
+                            ?>
+                            <div class="main-form mt-3 border-bottom">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            
+                                            <input type="text"  value="<?php echo $items['subject_id']; ?>" class="form-control mb-1 border-0" name="subject[]" required placeholder="Enter Subject">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-md-4">
+                                        <div class="">
+                                            <p><?php echo $items['subject_name'];?></p>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            
+                                            <input type="text" class="form-control mb-1" name="mark[]" required placeholder="Enter Mark" value="AB">
+                                        </div>
+                                    </div>
+                                    <!--<div class="col-md-4">
+                                        <div class="form-group ">
+                                            <br/>
+                                            <button type="button" class="remove-btn btn btn-danger mb-1">Remove</button>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                            <?php } } }?>
+                            <div class="paste-new-forms">
+
+                            </div>
+
+                            <button type="submit" name="save_multiple_data" class="btn btn-primary mt-1">Submit Multiple Data</button>
                         </form>
-                        </div>
                         <!--end student details table-->
                     </div>
                 </div>
@@ -277,6 +263,6 @@
 
     </div>
 
-    <?php include('footer.php') ?>
+    <?php //include('footer.php') ?>
 </body>
 </html>
