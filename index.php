@@ -48,9 +48,6 @@
 
     $dropdown_result = mysqli_query($connection,$dropdown_query);
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,19 +73,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">DTET </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">NVQ Results</a>
-                </li>                
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                </li>
-                </ul>
-            </div>
+            <?php include('header_public.php') ?>
         </nav>
     </div>
      
@@ -132,43 +117,16 @@
                         </table>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="fd-grid gap-2 alignrigt">
-            <a class="btn btn-warning my-3" href="certificate.php?index=<?php echo $student_index?>">View Exam Results</a>
-        </div>
+                <div class="alignrigt">
+                    <a class="btn btn-warning my-3" href="certificate.php?index=<?php echo $student_index?>">View Exam Results</a>
+                </div>
+            </div>            
+        </div>        
     </div>
+    <div class="space30"><p></p></div>
 
     <!-- Footer -->
-    <footer class="text-center text-lg-start bg-light text-muted">
-    <section class="space10">
-        <div class="container text-center text-md-start mt-5">
-            <div class="row mt-3">
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">
-                    <i class="fas fa-gem me-3"></i>SRM System
-                </h6>
-                <p>Student Result Management(SRM) System, Using this simple application you can find your results of the theoritical exam conducted by Department of 
-                    Technical Education and Training.</p>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">Useful links</h6>
-                    <p class="reun"><a href="www.dtet.gov.lk/en" class="text-reset">Department of Technical Education and Training</a></p>
-                    <p class="reun"><a href="www.nvq.gov.lk" class="text-reset">Tertiary and Vocational Education Commission</a></p>
-                    <p class="reun"><a href="www.mis.dtet.gov.lk" class="text-reset">Management Information System</a></p>
-                </div>
-                <div class="col-md-4 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4">
-                <h6 class="text-uppercase fw-bold mb-4">Contact Us</h6>
-                    <p><i class="fas fa-home me-3"></i>No 557, Olcott Mawatha, Colombo 10</p>
-                    <p><i class="fas fa-envelope me-3"></i>info@dtet.gov.lk</p>
-                    <p><i class="fas fa-phone me-3"></i>071 199 7111</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">© 2022 Copyright. <a class="text-reset fw-bold" href="about.php">MIT219_G6</a>
-    </div>
-    </footer>
+    <?php include('footer.php') ?>
     <!-- Footer -->
 </body>
 </html>
