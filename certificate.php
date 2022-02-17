@@ -57,19 +57,7 @@
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">DTET </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">NVQ Results</a>
-                </li>                
-                <li class="nav-item">
-                    <a class="nav-link" href="login.php">Login</a>
-                </li>
-                </ul>
-            </div>
+            <?php include('header_public.php') ?>
         </nav>
     </div>
 
@@ -136,13 +124,16 @@
                         </tbody>
                     </table>
                     <!--Print button-->
-                    <div class="alignrigt">
-                    <button class="btn btn-success mb-3 d-print-none" href="certificate.php">Back</button>
+                    
+                </div> 
+                <div class="alignrigt">
+                    <button class="btn btn-success mb-3 d-print-none" href="index.php">Back</button>
                     <button class="btn btn-warning mb-3 d-print-none" onclick="window.print()">Print</button>
-                    <div>
-                </div>            
+                <div>          
         </div>        
     </div>
+    </div>
+    <div class="space30 d-print-none"><p></p></div>
     <?php include('footer.php') ?>
 </body>
 </html>
