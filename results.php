@@ -169,7 +169,7 @@
         </div>
 
         <!--floating button-->
-        <a href="addresult.php" class="float btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add Course">
+        <a href="addresults.php" class="float btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Add Course">
             <i class="fa fa-plus my-float"></i>
         </a>
         <!--end floating button-->
